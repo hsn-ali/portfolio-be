@@ -1,3 +1,4 @@
+import { ApiProperty } from "@nestjs/swagger";
 import mongoose from "mongoose";
 
 export const IntroSchema = new mongoose.Schema({
@@ -10,6 +11,27 @@ export const IntroSchema = new mongoose.Schema({
     date: {type: String},
     social: {type: Array},
 });
+
+export class Intro {
+    @ApiProperty()
+    id: number;
+    @ApiProperty()
+    greeting: string;
+    @ApiProperty()
+    name: string;
+    @ApiProperty()
+    designation: string;
+    @ApiProperty()
+    outline: string;
+    @ApiProperty()
+    active?: boolean;
+    @ApiProperty()
+    resume?: string;
+    @ApiProperty()
+    date: string;
+    @ApiProperty()
+    social: [];
+}
 
 export interface IIntro {
     id?: number;
